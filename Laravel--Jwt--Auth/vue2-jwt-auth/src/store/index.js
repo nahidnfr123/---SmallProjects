@@ -3,9 +3,15 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+import auth from "./authentication";
+import user from "./user";
+
+const store = new Vuex.Store({
+    strict: true,
+    modules: {
+        auth,
+        user
+    }
 });
+
+export default store;
